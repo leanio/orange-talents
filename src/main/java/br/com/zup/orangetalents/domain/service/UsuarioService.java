@@ -28,7 +28,7 @@ public class UsuarioService {
 		}
 		
 		if (usuario.temEmail()) {
-			Optional<Usuario> usuarioRealEmail = usuarioRepository.findByEmail(usuario.getEmail());
+			Optional<Usuario> usuarioRealEmail = usuarioRepository.findByEmailIgnoreCase(usuario.getEmail());
 			
 			if (usuarioRealEmail.isPresent() && !usuarioRealEmail.get().equals(usuario)) {
 				throw new RegraNegocioException("O E-mail informado se encontra em uso");
