@@ -2,8 +2,6 @@ package br.com.zup.orangetalents.domain.service;
 
 import java.time.LocalDate;
 
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,8 +18,7 @@ public class VacinacaoService {
 	
 	@Autowired
 	private UsuarioService usuarioService;
-	
-	@Transactional
+
 	public Vacinacao salvar(Vacinacao vacinacao) {
 		Long idUsuario = vacinacao.getUsuario().getId();
 		

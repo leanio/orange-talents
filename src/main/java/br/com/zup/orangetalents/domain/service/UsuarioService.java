@@ -3,8 +3,6 @@ package br.com.zup.orangetalents.domain.service;
 import java.time.LocalDate;
 import java.util.Optional;
 
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +17,6 @@ public class UsuarioService {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
-	@Transactional
 	public Usuario salvar(Usuario usuario) {
 		Optional<Usuario> usuarioRealCpf = usuarioRepository.findByCpf(usuario.getCpf());
 		
